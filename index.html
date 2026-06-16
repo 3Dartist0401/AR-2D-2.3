@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AR View</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #fff;
+    }
+    .card {
+      background: #1c1c1e;
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 320px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .icon { font-size: 64px; margin-bottom: 16px; }
+    h1 { font-size: 1.4rem; margin-bottom: 8px; color: #fff; }
+    p { color: #8e8e93; font-size: 0.9rem; margin-bottom: 28px; line-height: 1.5; }
+
+    /* Magic AR link — rel="ar" triggers iOS QuickLook */
+    a[rel="ar"] {
+      display: inline-block;
+      background: #0a84ff;
+      color: white;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    a[rel="ar"]:active { opacity: 0.7; }
+
+    /* Hidden img required by iOS for rel=ar to work */
+    a[rel="ar"] img { display: none; }
+
+    .note {
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: #48484a;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">📦</div>
+    <h1>AR Model</h1>
+    <p>iPhone se seedha AR mein dekhein</p>
+
+    <!--
+      rel="ar" is the magic attribute.
+      iOS Safari automatically opens USDZ in AR QuickLook.
+      The <img> tag inside is required by iOS — it can be hidden.
+      Replace the href with YOUR raw GitHub URL to the .usdz file.
+    -->
+    <a rel="ar" href="2D.usdz">
+      <img src="" alt="">
+      View in AR
+    </a>
+
+    <p class="note">
+      iPhone + Safari zaroori hai<br>
+      Android support nahi karta
+    </p>
+  </div>
+</body>
+</html>
