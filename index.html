@@ -6,25 +6,31 @@
 <title>AR View</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:-apple-system,sans-serif;color:#fff}
-.card{background:#1c1c1e;border-radius:20px;padding:40px 32px;text-align:center;max-width:320px;width:90%}
-.icon{font-size:64px;margin-bottom:16px}
-h1{font-size:1.4rem;margin-bottom:8px}
-p{color:#8e8e93;font-size:.9rem;margin-bottom:28px}
-a[rel="ar"]{display:inline-block;background:#0a84ff;color:#fff;text-decoration:none;padding:16px 36px;border-radius:14px;font-size:1.05rem;font-weight:600}
+html,body{height:100%}
+body{background:#000;display:flex;align-items:center;justify-content:center;font-family:-apple-system,sans-serif}
+
+a[rel="ar"]{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  text-decoration:none;
+  color:#fff;
+}
 a[rel="ar"] img{display:none}
-.note{margin-top:24px;font-size:.78rem;color:#48484a}
+.icon{font-size:90px;margin-bottom:20px}
+.label{font-size:1.6rem;font-weight:700;color:#0a84ff}
+.sub{margin-top:10px;font-size:.95rem;color:#8e8e93}
 </style>
 </head>
 <body>
-<div class="card">
-<div class="icon">📦</div>
-<h1>AR Model</h1>
-<p>iPhone se AR mein dekhein</p>
-<a rel="ar" href="AR%202D%202.3.usdz">
-<img src="" alt="">View in AR
+<a id="arLink" rel="ar" href="AR%202D%202.3.usdz">
+  <img src="" alt="">
+  <div class="icon">📦</div>
+  <div class="label">Tap to View in AR</div>
+  <div class="sub">iPhone Safari required</div>
 </a>
-<p class="note">iPhone + Safari zaroori hai</p>
-</div>
 </body>
 </html>
